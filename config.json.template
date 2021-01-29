@@ -1,8 +1,7 @@
 {
     "apiKey": "",
     "secretKey": "",
-    "subAccount": "MAPS-IEO",
-    "myName": "",
+    "subAccount": "",
     "symbol":"MAPS/USDT",
     "qty":300,
     "price":0.3,
