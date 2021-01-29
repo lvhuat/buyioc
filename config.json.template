@@ -1,0 +1,11 @@
+{
+    "apiKey": "",
+    "secretKey": "",
+    "subAccount": "MAPS-IEO",
+    "myName": "",
+    "symbol":"MAPS/USDT",
+    "qty":300,
+    "price":0.3,
+    "startTime":"2021-02-01T00:00:00Z",
+    "ding": ""
+}
