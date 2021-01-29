@@ -25,7 +25,7 @@ type TextMessage struct {
 }
 
 func SendDingtalkText(url string, text string) {
-	SendDingtalk(url, "", text)
+	SendDingtalk(url, "", "告警\n"+text)
 }
 
 func SendDingtalk(url string, title string, text string) {
