@@ -117,7 +117,6 @@ func place(clientId string, market string, side string, price float64, _type str
 	resp, err := client.placeOrder(clientId, market, side, price, _type, size, reduce, post, ioc)
 	if err != nil {
 		log.Errorln("PlaceError", err)
-		SendDingTalkAsync(fmt.Sprintln("发送订单失败:", market, side, price, _type, size, reduce, "原因：", err))
 		return err
 	}
 	defer resp.Body.Close()
@@ -128,7 +127,6 @@ func place(clientId string, market string, side string, price float64, _type str
 
 	if result.Error != "" {
 		log.Errorln("PlaceError", result.Error)
-		SendDingTalkAsync(fmt.Sprintln("发送订单失败:", market, side, price, _type, size, reduce, "原因：", result.Error))
 		return fmt.Errorf("%v", result.Error)
 	}
 

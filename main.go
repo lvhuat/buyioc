@@ -109,11 +109,20 @@ func main() {
 		time.Sleep(time.Second)
 	}
 
+	started := false
 	for {
-		err := place(uuid.New().String(), config.Symbol, "buy", config.Price, "limit", config.Qty, false, false, true)
-		if err != nil {
-			time.Sleep(time.Millisecond * 500)
+		go func() {
+			err := place(uuid.New().String(), config.Symbol, "buy", config.Price, "limit", config.Qty, false, false, true)
+			if err == nil {
+				started = true
+			}
+		}()
+
+		if !started {
+			time.Sleep(time.Millisecond * 300)
 			continue
+		} else {
+			time.Sleep(time.Millisecond * 20)
 		}
 	}
 }
