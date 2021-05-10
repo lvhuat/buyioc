@@ -2,9 +2,14 @@
     "apiKey": "",
     "secretKey": "",
     "subAccount": "",
-    "symbol":"MAPS/USDT",
-    "qty":300,
-    "price":0.3,
-    "startTime":"2021-02-01T00:00:00Z",
+    "myName": "",
+    "symbol": "USDT/USD",
+    "qty": 1,
+    "price": 2,
+    "sellPrice": 10,
+    "ioc": true,
+    "startTime": "2021-01-01T00:00:00Z",
+    "checkDur": "10s",
+    "quickDur": "1s",
     "ding": ""
 }
