@@ -343,9 +343,13 @@ type Config struct {
 	Ding       string    `json:"ding"`
 	MyName     string    `json:"myName"`
 	Price      float64   `json:"price"`
+	SellPrice  float64   `json:"sellPrice"`
 	Qty        float64   `json:"qty"`
 	Symbol     string    `json:"symbol"`
 	StartAt    time.Time `json:"startTime"`
+	Ioc        bool      `json:"ioc"`
+	CheckDur   string    `json:"checkDur"`
+	QuickDur   string    `json:"QuickDur"`
 }
 
 func NewDefaultConfig() *Config {

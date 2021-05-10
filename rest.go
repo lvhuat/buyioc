@@ -226,6 +226,24 @@ func (client *FtxClient) getPositionsEx() ([]Position, error) {
 	return data, nil
 }
 
+type Balance struct {
+	Coin     string  `json:"coin"`
+	Free     float64 `json:"free"`
+	Total    float64 `json:"total"`
+	UsdValue float64 `json:"usdValue"`
+}
+
+func (client *FtxClient) GetBalances() ([]*Balance, error) {
+	rsp, err := client._get("wallet/balances", []byte(""))
+	var balances []*Balance
+	err = parseResultWrap(err, rsp, &balances)
+	if err != nil {
+		return nil, err
+	}
+
+	return balances, nil
+}
+
 func (client *FtxClient) getFuture(market string) (*http.Response, error) {
 	return client._get("futures/"+market, []byte(""))
 }
